@@ -20,7 +20,7 @@ spaces_id = []
 for space in spaces:
     spaces_id.append(space.id)
 
-#extracting 10 readmes from the openenv tagged spaces
+#EXTRACT THE READMES AND STORE THEM UNDER THE DATA FOLDER FOR FUTURE PROCESSING
 root = Path(__file__).resolve().parent
 data_folder = root / "data"
 
