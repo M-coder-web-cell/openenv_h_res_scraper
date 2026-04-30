@@ -35,4 +35,7 @@ for spaceid in spaces_id:
     dst = data_folder / dst_safe_name 
     Path(downloaded_path).replace(dst)
 
-    
+
+for file_path in data_folder.glob("*.md"):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        readme_content
