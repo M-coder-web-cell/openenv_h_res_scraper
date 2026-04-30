@@ -19,7 +19,9 @@ hf_api = HfApi(
 spaces = hf_api.list_spaces(filter = ["openenv"], limit = 4)
 
 spaces_id = []
+
 threshold_date = datetime(2026, 3, 15, tzinfo=timezone.utc)
+hack_finals_date = datetime(2026, 4, 24, tzinfo= timezone.utc)
 for space in spaces:
     #fetch all repos spaces created after 15th march
     if(space.created_at > threshold_date and space.last_modified > hack_finals_date):
