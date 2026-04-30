@@ -25,13 +25,13 @@ for space in spaces:
     spaces_id.append(space.id)
 
 #EXTRACT THE READMES AND STORE THEM UNDER THE DATA FOLDER FOR FUTURE PROCESSING
-root = Path(__file__).resolve().parent
-data_folder = root / "data"
-
-for spaceid in spaces_id:
-    downloaded_path = hf_api.hf_hub_download(repo_id = spaceid, repo_type="space", filename = "README.md", local_dir = data_folder)
-    dst_safe_name = spaceid.replace("/", "_") + ".md"
-    dst = data_folder / dst_safe_name 
-    Path(downloaded_path).replace(dst)
+#root = Path(__file__).resolve().parent
+#data_folder = root / "data"
+#
+#for spaceid in spaces_id:
+#    downloaded_path = hf_api.hf_hub_download(repo_id = spaceid, repo_type="space", filename = "README.md", local_dir = data_folder)
+#    dst_safe_name = spaceid.replace("/", "_") + ".md"
+#    dst = data_folder / dst_safe_name 
+#    Path(downloaded_path).replace(dst)
 
     
