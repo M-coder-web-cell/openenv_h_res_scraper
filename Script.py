@@ -1,6 +1,7 @@
 from huggingface_hub import HfApi, list_spaces
 from pathlib import Path
-from python_dotenv import load_dotenv
+from dotenv import load_dotenv
+from datetime import datetime, timezone
 import os
 import requests
 import json
@@ -15,9 +16,12 @@ hf_api = HfApi(
     token=os.getenv("HF_TOKEN"), 
 )
 
-spaces = hf_api.list_spaces(filter = ["openenv"], limit = 10)
+spaces = hf_api.list_spaces(filter = ["openenv"], limit = 4)
 spaces_id = []
+threshold_date = datetime(2026, 3, 15, tzinfo=timezone.utc)
 for space in spaces:
+    if(space.created_at > threshold_date):
+        print("True")
     spaces_id.append(space.id)
 
 #EXTRACT THE READMES AND STORE THEM UNDER THE DATA FOLDER FOR FUTURE PROCESSING
