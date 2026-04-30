@@ -22,7 +22,7 @@ spaces_id = []
 threshold_date = datetime(2026, 3, 15, tzinfo=timezone.utc)
 for space in spaces:
     #fetch all repos spaces created after 15th march
-    if(space.created_at > threshold_date):
+    if(space.created_at > threshold_date and space.last_modified > hack_finals_date):
         spaces_id.append(space.id)
 
 #EXTRACT THE READMES AND STORE THEM UNDER THE DATA FOLDER FOR FUTURE PROCESSING
