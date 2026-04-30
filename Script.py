@@ -37,5 +37,5 @@ for spaceid in spaces_id:
 
 
 for file_path in data_folder.glob("*.md"):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        readme_content
+    with open(file_path, 'r', encoding='utf-8') as file:
+        readme_content = file.read()
